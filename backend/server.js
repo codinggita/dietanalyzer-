@@ -5,6 +5,8 @@ import cookieParser from 'cookie-parser';
 import authRoutes from './routes/authRoutes.js';
 import dietRoutes from './routes/dietRoutes.js';
 import workoutRoutes from './routes/workoutRoutes.js';
+import profileRoutes from './routes/profileRoutes.js';
+import progressRoutes from './routes/progressRoutes.js';
 import { notFound, errorHandler } from './middlewares/errorMiddleware.js';
 import connectDB from './config/db.js';
 
@@ -28,6 +30,8 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/diet', dietRoutes);
 app.use('/api/workout', workoutRoutes);
+app.use('/api/profile', profileRoutes);
+app.use('/api/progress', progressRoutes);
 
 // Base Route
 app.get('/', (req, res) => {
